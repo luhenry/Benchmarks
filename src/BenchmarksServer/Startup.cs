@@ -1542,8 +1542,6 @@ namespace BenchmarkServer
                 EnableRaisingEvents = true
             };
 
-            Log.WriteLine($"[{process.StartInfo.WorkingDirectory}] {process.StartInfo.FileName} {process.StartInfo.Arguments}");
-
             process.Start();
             process.BeginOutputReadLine();
             process.BeginErrorReadLine();
