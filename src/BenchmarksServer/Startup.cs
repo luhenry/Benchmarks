@@ -487,7 +487,7 @@ namespace BenchmarkServer
                                     catch (Exception e)
                                     {
                                         workingDirectory = null;
-                                        Log.WriteLine($"Job failed with DockerBuildAndRun: " + e.Message);
+                                        Log.WriteLine($"Job failed with DockerBuildAndRun: " + e);
                                         Log.WriteLine($"{job.State} -> Failed");
                                         job.State = ServerState.Failed;
                                     }
