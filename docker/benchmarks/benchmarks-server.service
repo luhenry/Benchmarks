@@ -1,0 +1,16 @@
+[Unit]
+Description=ASP.NET Benchmarks Server
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+WorkingDirectory=/home/luhenry/benchmarks-server/docker/benchmarks
+Environment=server_ip=10.128.0.72 hardware_version=HPZ440
+ExecStartPre=/usr/bin/git pull origin master
+ExecStartPre=/bin/bash -xe build.sh
+ExecStart=/bin/bash -xe run-server-in-systemd.sh
+
+[Install]
+WantedBy=multi-user.target
